@@ -1,0 +1,556 @@
+/* ================================= */
+/* CONFIGURACIÓN GENERAL */
+/* ================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #211828;
+    color: #E1FDFE;
+}
+
+
+/* ================================= */
+/* APLICACIÓN */
+/* ================================= */
+
+.app {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* ================================= */
+/* ENCABEZADO */
+/* ================================= */
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+h1 {
+    margin-bottom: 5px;
+    color: #E1FDFE;
+}
+
+
+header p {
+    text-align: center;
+    color: #E1FDFE;
+}
+
+
+/* ================================= */
+/* TARJETAS */
+/* ================================= */
+
+.card {
+    background: #841e1e;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 10px rgba(236, 231, 231, 0);
+}
+
+
+.card h2 {
+    margin-top: 0;
+    color: #E1FDFE;
+}
+
+
+/* ================================= */
+/* ETIQUETAS */
+/* ================================= */
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #E1FDFE;
+}
+
+
+/* ================================= */
+/* CAMPOS */
+/* ================================= */
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+
+    background: #570210;
+    color: #E1FDFE;
+}
+
+
+input::placeholder {
+    color: #E1FDFE;
+    opacity: 0.7;
+}
+
+
+input:focus,
+select:focus {
+    outline: 2px solid #8097B7;
+}
+
+
+/* ================================= */
+/* OPCIONES DEL SELECT */
+/* ================================= */
+
+select option {
+    background: #570210;
+    color: #E1FDFE;
+}
+
+
+/* ================================= */
+/* BOTONES */
+/* ================================= */
+
+button {
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #211828;
+    color: #E1FDFE;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+button:hover {
+    opacity: 0.85;
+}
+
+
+/* ================================= */
+/* BOTÓN PERFIL */
+/* ================================= */
+
+.guardar-perfil {
+    width: 100%;
+    margin-top: 18px;
+
+    background: #211828;
+    color: #E1FDFE;
+}
+
+
+/* ================================= */
+/* ENTRADA DE PUNTAJE */
+/* ================================= */
+
+.entrada {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+.entrada input {
+    flex: 1;
+}
+
+
+.entrada button {
+    min-width: 120px;
+}
+
+
+/* ================================= */
+/* TABLA */
+/* ================================= */
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+
+#tablaAnotacion {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+
+#tablaAnotacion th {
+    background: #E1FDFE;
+    color: #211828;
+
+    padding: 12px 8px;
+    text-align: center;
+}
+
+
+#tablaAnotacion td {
+    border: 1px solid #E1FDFE;
+
+    padding: 8px;
+    text-align: center;
+
+    color: #E1FDFE;
+}
+
+
+#tablaAnotacion tbody tr:nth-child(even) {
+    background: #3e1010;
+}
+
+
+/* ================================= */
+/* CASILLAS DE PUNTAJE */
+/* ================================= */
+
+.casilla-puntaje {
+    width: 55px;
+    padding: 8px;
+
+    text-align: center;
+
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    background: #570210;
+    color: #E1FDFE;
+}
+
+
+.casilla-puntaje::placeholder {
+    color: #E1FDFE;
+    opacity: 0.7;
+}
+
+
+.casilla-puntaje:focus {
+    outline: 2px solid #8097B7;
+}
+
+
+/* ================================= */
+/* TOTAL DE RONDA */
+/* ================================= */
+
+.total-ronda {
+    font-weight: bold;
+
+    background: #eeeeee;
+
+    color: #211828 !important;
+}
+
+
+/* ================================= */
+/* TOTAL GENERAL */
+/* ================================= */
+
+.total-general {
+    background: #E1FDFE;
+
+    color: #211828 !important;
+
+    font-weight: bold;
+
+    padding: 12px;
+}
+
+
+/* ================================= */
+/* FILA TOTAL DE LA TABLA */
+/* ================================= */
+
+/*
+   ESTA ES LA PARTE IMPORTANTE.
+
+   La fila TOTAL tiene fondo azul claro.
+   Por eso obligamos a que TODO su contenido
+   tenga el color morado #211828.
+*/
+
+#filaTotal {
+    background: #E1FDFE;
+}
+
+
+#filaTotal td {
+    background: #E1FDFE;
+
+    color: #211828 !important;
+
+    font-weight: bold;
+
+    border: 1px solid #211828;
+
+    padding: 12px;
+
+    text-align: center;
+}
+
+
+/* ================================= */
+/* ESTADÍSTICAS */
+/* ================================= */
+
+.estadisticas {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+.estadisticas div {
+    background: rgb(43, 9, 9);
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow:
+        0 3px 10px rgba(11, 1, 1, 0);
+}
+
+
+/* TÍTULOS */
+
+.estadisticas h3 {
+    color: #E1FDFE;
+}
+
+
+/* NÚMEROS */
+
+.estadisticas p {
+    color: #E1FDFE;
+
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+
+.estadisticas span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #E1FDFE;
+}
+
+
+.estadisticas strong {
+    font-size: 28px;
+
+    color: #E1FDFE;
+}
+
+
+/* ================================= */
+/* HISTORIAL */
+/* ================================= */
+
+.entrenamiento {
+    background: #3e1010;
+
+    padding: 15px;
+
+    margin-top: 10px;
+
+    border-radius: 8px;
+
+    border-left: 5px solid #E1FDFE;
+}
+
+
+.entrenamiento strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #E1FDFE;
+}
+
+
+.entrenamiento p {
+    text-align: left;
+
+    margin: 5px 0;
+
+    color: #E1FDFE;
+}
+
+
+/* ================================= */
+/* HOJAS DE ANOTACIÓN */
+/* ================================= */
+
+.hoja-anotacion {
+    background: #3e1010;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border-radius: 10px;
+
+    border-left: 5px solid #E1FDFE;
+}
+
+
+.hoja-anotacion h3 {
+    color: #E1FDFE;
+
+    margin-top: 0;
+}
+
+
+/* ================================= */
+/* TABLAS DE ANOTACIÓN */
+/* ================================= */
+
+.tabla-anotacion {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 10px;
+}
+
+
+.tabla-anotacion th {
+    background: #E1FDFE;
+
+    color: #211828;
+
+    padding: 10px;
+
+    text-align: center;
+}
+
+
+.tabla-anotacion td {
+    border: 1px solid #E1FDFE;
+
+    padding: 8px;
+
+    text-align: center;
+
+    color: #E1FDFE;
+}
+
+
+/* ================================= */
+/* TOTAL DE CADA HOJA */
+/* ================================= */
+
+.tabla-anotacion .total-ronda {
+    background: #E1FDFE;
+
+    color: #211828 !important;
+
+    font-weight: bold;
+}
+
+
+/* ================================= */
+/* INFORMACIÓN DE LA HOJA */
+/* ================================= */
+
+.info-hoja {
+    color: #E1FDFE;
+
+    font-weight: bold;
+}
+
+
+/* ================================= */
+/* BOTÓN TERMINAR */
+/* ================================= */
+
+.terminar {
+    width: 100%;
+
+    margin-top: 20px;
+
+    background: #49273F;
+
+    color: #E1FDFE;
+}
+
+
+/* ================================= */
+/* BOTÓN REINICIAR */
+/* ================================= */
+
+.reiniciar {
+    width: 100%;
+
+    margin-top: 20px;
+
+    background: #77080E;
+
+    color: #E1FDFE;
+}
+
+
+/* ================================= */
+/* CELULARES */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    .app {
+        padding: 12px;
+    }
+
+
+    .entrada {
+        flex-direction: column;
+    }
+
+
+    .entrada button {
+        width: 100%;
+    }
+
+
+    .estadisticas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .card {
+        padding: 15px;
+    }
+
+}
