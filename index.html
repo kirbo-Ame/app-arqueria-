@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Archery Score</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="app">
+
+
+        <!-- ================================= -->
+        <!-- ENCABEZADO -->
+        <!-- ================================= -->
+
+        <header>
+
+            <h1>🏹 Archery Score</h1>
+
+            <p>
+                Registro y seguimiento de tiro con arco
+            </p>
+
+        </header>
+
+
+
+        <!-- ================================= -->
+        <!-- PERFIL DEL ARQUERO -->
+        <!-- ================================= -->
+
+        <section class="card">
+
+            <h2>👤 Perfil del arquero</h2>
+
+
+            <label for="nombreArquero">
+                Nombre
+            </label>
+
+            <input
+                type="text"
+                id="nombreArquero"
+                placeholder="Escribe tu nombre"
+            >
+
+
+            <label for="tipoArco">
+                Tipo de arco
+            </label>
+
+            <select id="tipoArco">
+
+                <option value="Recurvo">
+                    Recurvo
+                </option>
+
+                <option value="Compuesto">
+                    Compuesto
+                </option>
+
+                <option value="Longbow">
+                    Longbow
+                </option>
+
+                <option value="Tradicional">
+                    Tradicional
+                </option>
+
+            </select>
+
+
+            <label for="categoria">
+                Categoría
+            </label>
+
+            <select id="categoria">
+
+                <option value="Principiante">
+                    Principiante
+                </option>
+
+                <option value="Intermedio">
+                    Intermedio
+                </option>
+
+                <option value="Avanzado">
+                    Avanzado
+                </option>
+
+            </select>
+
+
+            <label for="distancia">
+                Distancia
+            </label>
+
+            <select id="distancia">
+
+                <option value="10 metros">
+                    10 metros
+                </option>
+
+                <option value="18 metros">
+                    18 metros
+                </option>
+
+                <option value="30 metros">
+                    30 metros
+                </option>
+
+                <option value="50 metros">
+                    50 metros
+                </option>
+
+                <option value="70 metros">
+                    70 metros
+                </option>
+
+            </select>
+
+
+            <button
+                class="guardar-perfil"
+                onclick="guardarPerfil()"
+            >
+
+                💾 GUARDAR PERFIL
+
+            </button>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- CONFIGURACIÓN -->
+        <!-- ================================= -->
+
+        <section class="card">
+
+            <h2>🎯 Configuración</h2>
+
+
+            <label for="numeroFlechas">
+                Flechas por ronda
+            </label>
+
+
+            <select id="numeroFlechas">
+
+                <option value="3">
+                    3 flechas
+                </option>
+
+                <option value="6" selected>
+                    6 flechas
+                </option>
+
+                <option value="10">
+                    10 flechas
+                </option>
+
+            </select>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- RONDA ACTUAL -->
+        <!-- ================================= -->
+
+        <section class="card">
+
+            <h2>
+
+                🏹 Ronda
+                <span id="numeroRonda">1</span>
+
+            </h2>
+
+
+            <p>
+
+                Flecha
+
+                <span id="flechaActual">1</span>
+
+                de
+
+                <span id="totalFlechas">6</span>
+
+            </p>
+
+
+            <div class="entrada">
+
+                <input
+                    type="number"
+                    id="puntaje"
+                    min="0"
+                    max="10"
+                    placeholder="0 - 10"
+                >
+
+
+                <button onclick="agregarPuntaje()">
+
+                    AGREGAR
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- HOJA DE ANOTACIÓN -->
+        <!-- ================================= -->
+
+        <section class="card">
+
+            <h2>
+                📝 Hoja de anotación
+            </h2>
+
+
+            <div class="tabla-contenedor">
+
+                <table id="tablaAnotacion">
+
+                    <thead>
+
+                        <tr id="encabezadoTabla">
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tablaPuntajes">
+
+                    </tbody>
+
+
+                    <!-- ESTA PARTE FALTABA -->
+
+                    <tfoot>
+
+                        <tr id="filaTotal">
+
+                        </tr>
+
+                    </tfoot>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- ESTADÍSTICAS -->
+        <!-- ================================= -->
+
+        <section class="estadisticas">
+
+
+            <div>
+
+                <span>
+                    🎯 Total
+                </span>
+
+                <strong id="total">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    📊 Promedio
+                </span>
+
+                <strong id="promedio">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    🥇 Máximo
+                </span>
+
+                <strong id="maximo">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    ❌ X
+                </span>
+
+                <strong id="cantidadX">
+                    0
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- HISTORIAL -->
+        <!-- ================================= -->
+
+        <section class="card">
+
+            <h2>
+                📚 Historial de entrenamientos
+            </h2>
+
+
+            <div id="historial">
+
+                Todavía no hay entrenamientos guardados.
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- BOTÓN TERMINAR -->
+        <!-- ================================= -->
+
+        <button
+            class="terminar"
+            onclick="terminarRonda()"
+        >
+
+            ✅ TERMINAR RONDA
+
+        </button>
+
+
+
+        <!-- ================================= -->
+        <!-- BOTÓN REINICIAR -->
+        <!-- ================================= -->
+
+        <button
+            class="reiniciar"
+            onclick="reiniciar()"
+        >
+
+            🔄 REINICIAR RONDA
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- ================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================= -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
+```
